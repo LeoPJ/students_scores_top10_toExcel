@@ -22,12 +22,12 @@ class MysqlDB{
     //构造方法
     private function __construct($config) {
         
-        $this->host = isset($config['host'])?$config['host']:'112.124.16.130';//判断是否写了服务器地址
-        $this->username = isset($config['username'])?$config['username']:'visitor';//判断是否写了用户名
-        $this->password = isset($config['password'])?$config['password']:'powerbyM10!';//判断是否写了密码
+        $this->host = isset($config['host'])?$config['host']:'*';//判断是否写了服务器地址
+        $this->username = isset($config['username'])?$config['username']:'*';//判断是否写了用户名
+        $this->password = isset($config['password'])?$config['password']:'*';//判断是否写了密码
         $this->dbname = isset($config['dbname'])?$config['dbname']:'visiting';//判断是否写了数据库名
         $this->charset = isset($config['charset'])?$config['charset']:'charset';//判断是否设置编码格式
-        $this->port = isset($config['port'])?$config['port']:'3306';//判断是否写了端口号
+        $this->port = isset($config['port'])?$config['port']:'*';//判断是否写了端口号
         
         self::$instance = $this->connect();//获取连接
         $this->setCharset($this->charset);//设置编码格式
